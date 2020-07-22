@@ -1,0 +1,113 @@
+// Footer
+
+#wrapper-footer {
+ width: 100%;
+ margin-top: 50px;
+
+ a {
+   color: $lightGray;
+
+   &:hover {
+     color: $lightishGray;
+   }
+ }
+
+ &.home {
+   padding: 0;
+ }
+}
+
+#site-footer {
+ width: 100%;
+ padding-top: 20px;
+
+ >.container {
+   border-top: 1px solid $lightishGray;
+   max-width: 720px;
+  }
+}
+
+#footer-credits {
+ color: $lightGray;
+ text-transform: lowercase;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.footer-containers {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  margin-top: 20px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  @include mobile {
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: left;
+  height: 100%;
+  margin: 5px;
+
+  h4 {
+    font-size: $smallest;
+  }
+
+  @include mobile {
+    margin-top: 10px;
+
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.footer-section {
+  font-size: $smallest;
+  margin-top: 15px;
+
+  @include mobile {
+    text-align: center;
+    align-items: center;
+    margin-top: 25px;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin-top: 5px;
+
+      @include mobile {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+#footer-social {
+  margin-top: 40px;
+}

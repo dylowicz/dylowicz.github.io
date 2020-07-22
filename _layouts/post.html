@@ -1,0 +1,41 @@
+---
+layout: default
+
+class: post
+---
+
+<div id="wrapper-header" class="post">
+  <div class="container">
+    {% include header.html class="post" %}
+  </div>
+</div>
+
+<div id="wrapper-content" role="main" class="post">
+  <div class="container">
+    <article class="post-content">
+      <h1 class="post-title">{{ page.title }}</h1>
+
+      <section class="date">{{ page.date | date: "%b %e, %Y" }} · {{ page.read_time }} min read</section>
+
+      {% if page.tags[0] %}
+        <section class="tags">
+        {% for tag in page.tags %}
+          <a href="/blog/tags/#{{ tag }}" class="link-tag link-small">#{{ tag }}</a>
+        {% endfor %}
+        </section>
+      {% endif %}
+
+      {% if page.image %}
+        {% capture image_src %}{{ page.image }}{% endcapture %}
+        {% capture image_alt %}{{ page.alt }}{% endcapture %}
+        {% include image.html src=image_src alt=image_alt %}
+      {% endif %}
+
+      <div class="entry">{{ content }}</div>
+    </article>
+  </div>
+</div>
+
+<div id="wrapper-footer" class="post">
+  {% include footer.html %}
+</div>

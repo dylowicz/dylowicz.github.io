@@ -1,0 +1,385 @@
+---
+---
+
+// Imports
+@import "reset";
+@import "variables";
+@import "header";
+@import "navigation";
+@import "newsletter";
+@import "footer";
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font: $smaller $font;
+  font-weight: 400;
+  line-height: 1.625rem;
+  letter-spacing: -.01rem;
+	background: $white;
+  color: $darkestGray;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-overflow-scrolling: touch;
+  text-rendering: optimizeLegibility;
+}
+
+.preload * {
+  transition: none !important;
+}
+
+.container {
+  margin: 0 auto;
+  min-width: 320px;
+  max-width: 960px;
+  padding: 0 20px;
+  width: 100%;
+  height: 100%;
+
+  @include mobile {
+    padding: 0 15px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $darkestGray;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -.025rem;
+  margin: 1em 0 15px;
+  padding: 0;
+}
+
+h1 {
+  font-size: $bigger;
+  a {
+    color: inherit;
+  }
+
+  @include mobile {
+    font-size: $big;
+  }
+}
+
+h2 {
+  font-size: $big;
+
+  @include mobile {
+    font-size: $medium;
+  }
+}
+
+h3 {
+  font-size: $medium;
+
+  @include mobile {
+    font-size: $small;
+  }
+}
+
+h4 {
+  font-size: $small;
+
+  @include mobile {
+    font-size: $smaller;
+  }
+}
+
+p {
+  margin-top: 20px;
+  margin-bottom: 25px;
+
+  @include mobile {
+    margin-bottom: 20px;
+  }
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+	cursor: pointer;
+  transition: background-color .1s ease-in-out, border-color .1s ease-in-out, color .1s ease-in-out, opacity .1s ease-in-out;
+
+  &:hover, &:active {
+    color: $lightGray;
+  }
+
+  &.link-small {
+    font-size: $smallest;
+  }
+
+  &.link-tag {
+    color: $lightGray;
+
+    &:hover, &:active {
+      color: $lightishGray;
+    }
+  }
+}
+
+ul, ol {
+  margin: 15px 0;
+  padding-left: 30px;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+ol ul, ul ol, ul ul, ol ol {
+  margin: 0;
+}
+
+ul ul, ol ul {
+  list-style-type: circle;
+}
+
+em, i {
+  font-style: italic;
+}
+
+strong, b {
+  font-weight: 700;
+}
+
+img {
+  max-width: 100%;
+}
+
+figcaption {
+  text-align: center;
+  font-size: $tiny;
+  color: $lightGray;
+}
+
+// Fixes images in popup boxes from Google Translate
+.gmnoprint img {
+  max-width: none;
+}
+
+/*********************/
+/* LAYOUT / SECTIONS */
+/*********************/
+
+#wrapper-page {
+  position: relative;
+  min-height: 100%;
+  min-width: 320px;
+}
+
+#wrapper-content {
+  margin-top: 60px;
+
+  .container {
+    max-width: 640px;
+  }
+}
+
+// Page
+
+#page-header {
+  padding-top: 50px;
+
+  @include mobile {
+    padding-top: 30px;
+  }
+}
+
+#page-title {
+  color: $darkestGray;
+  font-weight: 800;
+  font-size: $biggest;
+  letter-spacing: -0.025rem;
+  word-spacing: -1px;
+  margin: auto;
+  margin-bottom: 15px;
+
+  @include mobile {
+    font-size: $bigger;
+  }
+}
+
+#page-subtitle {
+  color: $darkerGray;
+  font-size: $small;
+
+  @include mobile {
+    font-size: $smaller;
+    text-align: left;
+    padding-right: 20px;
+  }
+}
+
+#page-image {
+  display: inline-block;
+  height: auto;
+  width: 100%;
+  max-width: 100%;
+  padding-bottom: 41%; // aspect ratio = height/width*100%
+
+  background-image: url("/assets/dylowicz.jpg");
+  background-attachment: fixed;   // Create the parallax scrolling effect
+  background-repeat: no-repeat;
+  background-position: 0 60px;
+  background-size: contain;
+
+  // Reset parallax for mobile
+  @include mobile {
+    background-attachment: scroll;
+    background-position: 0 0;
+  }
+}
+
+// custom implementations
+
+.button {
+  display: inline-block;
+  min-height: 50px;
+  line-height: 45px;
+  padding: 0 15px;
+  border: 2px solid;
+  border-radius: 2px;
+
+  font-size: $smaller;
+  font-weight: 500;
+
+  transition: all .15s ease-in-out;
+  -webkit-appearance: none;
+  cursor: pointer;
+
+  margin-right: 10px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &.button-primary {
+    color: $lightestGray;
+    background-color: $darkerGray;
+    border: 2px solid $darkerGray;
+
+    &:hover, &:active {
+      background-color: $gray !important;
+      border: 2px solid $gray !important;
+    }
+  }
+
+  &.button-secondary {
+    color: $darkerGray;
+    background-color: inherit;
+    border: 2px solid $darkerGray;
+
+    &:hover, &:active {
+      color: $lightGray;
+      border: 2px solid $lightGray;
+    }
+  }
+
+  &.button-ternary {
+    border: none;
+    font-weight: 400;
+  }
+
+  &.button-slanted {
+    -ms-transform: skewX(-15deg);
+    -webkit-transform: skewX(-15deg);
+    transform: skewX(-15deg);
+
+    padding: 0 20px;
+
+    &:first-child {
+      margin-left: 10px;
+    }
+
+    @include mobileSmall {
+      padding: 0 15px;
+    }
+
+    >span {
+      -ms-transform: skewX(15deg);
+      -webkit-transform: skewX(15deg);
+      transform: skewX(15deg);
+
+      display: inline-block;
+    }
+  }
+
+  @include mobile {
+    font-size: $smallest;
+  }
+}
+
+.dot {
+  height: 9px;
+  width: 9px;
+  background-color: $lighterGray;
+  border-radius: 50%;
+  display: inline-block;
+
+  &.space {
+    margin-left: 1px;
+  }
+
+  @include mobile {
+    height: 7px;
+    width: 7px;
+  }
+
+  @include mobileSmall {
+    height: 5px;
+    width: 5px;
+  }
+}
+
+// Icons
+
+.icon {
+  &-tiny {
+    width: 26px;
+    height: 26px;
+  }
+
+  &-small {
+    width: 64px;
+    height: 64px;
+  }
+
+  &-medium {
+    width: 96px;
+    height: 96px;
+  }
+
+  &-big {
+    height: 128px;
+    width: 128px;
+  }
+}
+
+// social links
+
+.social-links {
+  a {
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include mobile {
+      padding: 5px;
+    }
+  }
+}
+
+.avatar {
+  border-radius: 6em;
+  overflow: hidden;
+}
