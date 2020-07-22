@@ -1,0 +1,32 @@
+---
+---
+
+@import "variables";
+
+#wrapper-page {
+  margin-bottom: 60px;
+}
+
+#home-buttons {
+  margin: 45px 0;
+
+  @include mobile {
+    margin: 35px 0;
+  }
+}
+
+#page-title {
+  text-align: center;
+
+  @include mobile {
+    font-size: $bigger;
+  }
+
+  @include mobileSmall {
+    font-size: $big;
+  }
+}
+
+#page-content {
+  text-align: center;
+}

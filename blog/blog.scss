@@ -1,0 +1,163 @@
+---
+---
+
+@import "variables";
+
+// #wrapper-content {
+//   &.post {
+//     margin-top: 110px;
+//
+//     @include mobile {
+//       margin-top: 100px;
+//     }
+//   }
+// }
+
+// Posts preview on /blog
+
+.posts {
+  padding-top: 30px;
+
+  @include mobile {
+    padding-top: 20px;
+  }
+}
+
+.post-preview {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+  z-index: 0;
+
+  padding: 15px;
+  box-shadow: 1px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+
+  transition: 0.2s all;
+
+  &:hover, &:active {
+    box-shadow: 2px 8px 24px rgba(0, 0, 0, 0.1);
+    transform: scale(1.005);
+    cursor: pointer;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include mobile {
+    padding: 10px;
+  }
+
+  a {
+    font-size: $medium;
+    color: $darkestGray;
+  }
+}
+
+.post-preview-title {
+  font-size: $big;
+  font-weight: 700;
+  margin-top: 0px;
+  margin-bottom: 5px;
+
+  @include mobileSmall {
+    font-size: $medium;
+  }
+}
+
+// Inside post
+
+.post-content {
+  padding: 50px 0;
+
+  @include mobile {
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+
+  .image {
+    margin-top: 15px;
+  }
+}
+
+.post-title {
+  font-weight: 800;
+  margin-bottom: 5px;
+  font-size: $bigger;
+
+  margin-top: 20px;
+
+  @include mobileSmall {
+    font-size: $big;
+  }
+}
+
+.post-content > .entry {
+  blockquote {
+    margin: 1.8em .8em;
+    border-left: 2px solid $lighterGray;
+    padding: 0.1em 1em;
+    color: $lightGray;
+    font-style: italic;
+  }
+
+  h1 {
+    font-size: $big;
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    margin-top: 45px;
+
+    @include mobile {
+      margin-top: 30px;
+    }
+  }
+
+  h3 {
+    margin-top: 35px;
+
+    @include mobile {
+      margin-top: 25px;
+    }
+  }
+
+  figure {
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  img {
+    border: solid 1px $lighterGray;
+    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.12);
+  }
+
+  hr {
+    border:none;
+    border-top: 4px dotted #c6d6d6;
+    background-color: $white;
+    width: 20px;
+    text-align: center;
+    margin: 20px auto;
+  }
+
+  .comments {
+    margin-top: 10px;
+  }
+}
+
+// misc
+
+.date {
+  font-size: $smallest;
+  color: $lightGray;
+}
+
+// Settled on moving the import of syntax highlighting to the bottom of the CSS
+// ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
+@import "highlights";

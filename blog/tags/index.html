@@ -1,0 +1,31 @@
+---
+layout: page
+custom_css: blog/tags/tags.css
+
+title: tags
+description:
+image: /assets/dylowicz.jpg
+
+header: tags
+
+sitemap: false
+---
+
+<section id="tags-list">
+{% for tag in site.tags %}
+  <a href="#{{ tag[0] | slugify }}">#{{ tag[0] | slugify }}</a>
+{% endfor %}
+</section>
+
+<section id="posts-by-tags">
+{% for tag in site.tags %}
+	<h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
+	<ul>
+	 {% for post in site.posts %}
+		 {% if post.tags contains tag[0] %}
+		 <li><h4><small>{{ post.date | date_to_string }}</small> - <a href="{{ post.url }}">{{ post.title }}</a></h4></li>
+		 {% endif %}
+	 {% endfor %}
+	</ul>
+{% endfor %}
+</section>
