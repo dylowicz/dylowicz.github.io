@@ -16,8 +16,6 @@
 }
 
 #page-title {
-  text-align: center;
-
   @include mobile {
     font-size: $bigger;
   }
