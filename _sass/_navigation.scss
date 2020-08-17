@@ -12,12 +12,11 @@ nav {
     margin-left: 30px;
     text-align: right;
 
-    color: $darkestGray;
+    color: $primary;
     font-weight: 700;
     font-size: $small;
 
     letter-spacing: -0.025rem;
-    text-transform: lowercase;
 
     @include mobile {
       margin: 0 auto;
@@ -141,7 +140,7 @@ nav {
     margin-bottom: 5px;
     position: relative;
 
-    background: $darkestGray;
+    background: $primary;
     border-radius: 1px;
 
     z-index: 3;
@@ -174,7 +173,7 @@ nav {
  */
 #menu-toggle input:checked ~ span
 {
-  background: $darkestGray;
+  background: $primary;
 
   @include mobile {
     opacity: 1;
@@ -198,7 +197,7 @@ nav {
  */
 #menu-toggle input:checked ~ span:nth-last-child(2)
 {
-  background: $darkestGray;
+  background: $primary;
 
   @include mobile {
     transform: rotate(-45deg) translate(0, -1px);

@@ -14,15 +14,15 @@ $blue: #0060ff;
 
 // grays
 $white: #fff;
-$lightestGray: #f2f2f2;
-$lighterGray: #eee;
-$lightGray: #a6a6a6;
-$lightishGray: #bebebe;
-$gray: #555;
-$darkGray: #333;
-$darkerGray: #222;
-$darkestGray: #111;
-$black: #000;
+$lightestGrey: #eee;
+$lighterGrey: #a6a6a6;
+$lightGrey: #bebebe;
+$grey: #555;
+$darkGrey: #3a3a3a;
+$darkerGrey: #2c2c2c;
+
+$primary: $darkerGrey;
+$ternary: $blue;
 
 // fonts
 $font: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;

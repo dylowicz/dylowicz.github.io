@@ -31,9 +31,10 @@
 
 #site-header {
   display: flex;
-  // justify-content: space-between;
-  justify-content: center; // TODO: remove when bringing back menu in navigation.html
+  justify-content: space-between;
   align-items: center;
+
+  width: 100%;
   padding: 10px 0;
 
   @include mobile {
@@ -43,13 +44,12 @@
 
 #site-name {
   margin: 0;
-  color: $darkestGray;
+  color: $primary;
   cursor: pointer;
 
-  font-weight: 800;
-  font-size: $big;
+  font-weight: 700;
+  font-size: $medium;
   word-spacing: 0.05rem;
-  text-transform: lowercase;
 
   @include mobile {
     font-size: $small;
