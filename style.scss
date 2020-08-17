@@ -19,13 +19,13 @@ body {
   line-height: 1.625rem;
   letter-spacing: -.01rem;
 	background: $white;
-  color: $darkestGray;
+  color: $primary;
 
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
   -webkit-overflow-scrolling: touch;
-  text-rendering: optimizeLegibility;
+  // text-rendering: optimizeLegibility;
 }
 
 .preload * {
@@ -35,7 +35,7 @@ body {
 .container {
   margin: 0 auto;
   min-width: 320px;
-  max-width: 960px;
+  max-width: 760px;
   padding: 0 20px;
   width: 100%;
   height: 100%;
@@ -46,7 +46,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: $darkestGray;
+  color: $primary;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -.025rem;
@@ -99,13 +99,13 @@ p {
 }
 
 a {
-  color: $blue;
+  color: $ternary;
   text-decoration: none;
 	cursor: pointer;
   transition: background-color .1s ease-in-out, border-color .1s ease-in-out, color .1s ease-in-out, opacity .1s ease-in-out;
 
   &:hover, &:active {
-    color: $lightGray;
+    color: $lighterGrey;
   }
 
   &.link-small {
@@ -113,10 +113,10 @@ a {
   }
 
   &.link-tag {
-    color: $lightGray;
+    color: $lighterGrey;
 
     &:hover, &:active {
-      color: $lightishGray;
+      color: $lightGrey;
     }
   }
 }
@@ -157,7 +157,7 @@ img {
 figcaption {
   text-align: center;
   font-size: $tiny;
-  color: $lightGray;
+  color: $lighterGrey;
 }
 
 // Fixes images in popup boxes from Google Translate
@@ -176,10 +176,14 @@ figcaption {
 }
 
 #wrapper-content {
-  margin-top: 60px;
+  margin-top: 30px;
+
+  @include mobile {
+    margin-top: 60px;
+  }
 
   .container {
-    max-width: 640px;
+    max-width: 660px;
   }
 }
 
@@ -194,14 +198,15 @@ figcaption {
 }
 
 #page-title {
-  color: $darkestGray;
+  color: $primary;
   font-weight: 800;
   font-size: $biggest;
   letter-spacing: -0.025rem;
   word-spacing: -1px;
+  text-align: center;
+
   margin: auto;
   margin-bottom: 15px;
-  text-align: center;
 
   @include mobile {
     font-size: $bigger;
@@ -209,13 +214,12 @@ figcaption {
 }
 
 #page-subtitle {
-  color: $darkerGray;
+  color: $primary;
   font-size: $small;
+  text-align: center;
 
   @include mobile {
     font-size: $smaller;
-    text-align: left;
-    padding-right: 20px;
   }
 }
 
@@ -263,24 +267,24 @@ figcaption {
   }
 
   &.button-primary {
-    color: $lightestGray;
-    background-color: $darkerGray;
-    border: 2px solid $darkerGray;
+    color: $lightestGrey;
+    background-color: $darkerGrey;
+    border: 2px solid $darkerGrey;
 
     &:hover, &:active {
-      background-color: $gray !important;
-      border: 2px solid $gray !important;
+      background-color: $grey !important;
+      border: 2px solid $grey !important;
     }
   }
 
   &.button-secondary {
-    color: $darkerGray;
+    color: $darkerGrey;
     background-color: inherit;
-    border: 2px solid $darkerGray;
+    border: 2px solid $darkerGrey;
 
     &:hover, &:active {
-      color: $lightGray;
-      border: 2px solid $lightGray;
+      color: $lighterGrey;
+      border: 2px solid $lighterGrey;
     }
   }
 
@@ -321,7 +325,7 @@ figcaption {
 .dot {
   height: 9px;
   width: 9px;
-  background-color: $lighterGray;
+  background-color: $lightestGrey;
   border-radius: 50%;
   display: inline-block;
 
@@ -364,6 +368,52 @@ figcaption {
   }
 }
 
+// Boxes
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.box {
+  flex: 1 1 auto;
+  margin: 10px;
+  width: 280px;
+
+  border-radius: 3px;
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.12);
+  &:hover, &:active {
+    box-shadow: 3px 6px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  &-link {
+    transition: 0.2s;
+    z-index: 0;
+
+    &:hover, &:active {
+      cursor: pointer;
+      transform: scale(1.005);
+    }
+  }
+
+  @include mobile {
+    min-width: 200px;
+  }
+}
+
+.box-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 15px 10px;
+
+  p {
+    margin: 15px 0;
+  }
+}
+
 // social links
 
 .social-links {
@@ -375,12 +425,30 @@ figcaption {
     }
 
     @include mobile {
-      padding: 5px;
+      padding: 2px;
     }
   }
 }
 
 .avatar {
-  border-radius: 6em;
+  border: 2px solid $ternary;
+  border-radius: 50%;
   overflow: hidden;
+
+  >img {
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.1);
+    z-index: 0;
+  }
+
+  &-medium {
+    width: 100px;
+    height: 100px;
+  }
+
+  &-big {
+    width: 132px;
+    height: 132px;
+  }
 }

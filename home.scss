@@ -3,28 +3,24 @@
 
 @import "variables";
 
-#wrapper-page {
-  margin-bottom: 60px;
-}
-
-#home-buttons {
-  margin: 45px 0;
+#wrapper-content {
+  margin-bottom: 120px;
 
   @include mobile {
-    margin: 35px 0;
-  }
-}
-
-#page-title {
-  @include mobile {
-    font-size: $bigger;
-  }
-
-  @include mobileSmall {
-    font-size: $big;
+    margin-bottom: 0px;
   }
 }
 
 #page-content {
   text-align: center;
+}
+
+#home-buttons {
+  // margin: 45px 0;
+  display: none;
+
+  @include mobile {
+    display: block;
+    margin: 35px 0;
+  }
 }

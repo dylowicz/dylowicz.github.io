@@ -1,13 +1,11 @@
 <footer id="site-footer">
   <div class="container">
-    <div class="footer-containers">
-      <div class="footer-container column">
-        {% include social-links.html class="footer-section" id="footer-social" %}
+    <div class="footer-container row">
+      <section class="footer-section" id="footer-credits">
+        &copy; 2020 {{ site.author.name }}
+      </section>
 
-        <section class="footer-section" id="footer-credits">
-          &copy; 2020 {{ site.author.name }}
-        </section>
-      </div>
+      {% include social-links.html class="footer-section" id="footer-social" %}
     </div>
   </div>
 </footer>

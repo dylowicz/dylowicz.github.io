@@ -1,0 +1,33 @@
+---
+---
+
+@import "variables";
+
+#wrapper-content {
+  .container {
+    max-width: 720px;
+  }
+}
+
+.boxes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box {
+  width: 320px;
+  
+  @include mobile {
+    width: 280px;
+  }
+}
+
+.box-container {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

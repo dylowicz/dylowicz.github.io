@@ -42,9 +42,9 @@
   min-width: 240px;
   padding: .6em;
   margin: 3px;
-  color: $darkestGray;
+  color: $primary;
   font-size: $smallest;
-  border: solid 2px $lightGray;
+  border: solid 2px $lighterGrey;
   border-radius: 25px;
   background: transparent;
 
@@ -62,7 +62,7 @@
   border-radius: 25px !important;
 
   &:hover, &:active {
-    background-color: $lightGray;
+    background-color: $lighterGrey;
   }
 
   @include mobile {
