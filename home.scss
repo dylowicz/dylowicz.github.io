@@ -6,13 +6,29 @@
 #wrapper-content {
   margin-bottom: 120px;
 
+  .container {
+    max-width: 760px;
+  }
+
   @include mobile {
     margin-bottom: 0px;
   }
 }
 
+#page-header {
+  @include mobile {
+    padding: 0;
+  }
+}
+
 #page-content {
   text-align: center;
+
+  @include mobile {
+    >.container {
+      padding: 0;
+    }
+  }
 }
 
 #home-buttons {
@@ -22,5 +38,20 @@
   @include mobile {
     display: block;
     margin: 35px 0;
+  }
+}
+
+.image {
+  @include mobile {
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    height: 50vw;
+  }
+
+  img {
+    @include mobile {
+      transform: scale(1.4);
+    }
   }
 }
