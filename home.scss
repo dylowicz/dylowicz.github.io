@@ -6,10 +6,6 @@
 #wrapper-content {
   margin-bottom: 120px;
 
-  .container {
-    max-width: 760px;
-  }
-
   @include mobile {
     margin-bottom: 0px;
   }
@@ -22,36 +18,14 @@
 }
 
 #page-content {
-  text-align: center;
-
-  @include mobile {
-    >.container {
-      padding: 0;
-    }
+  >.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
 }
 
-#home-buttons {
-  // margin: 45px 0;
-  display: none;
-
-  @include mobile {
-    display: block;
-    margin: 35px 0;
-  }
-}
-
-.image {
-  @include mobile {
-    position: relative;
-    margin: auto;
-    overflow: hidden;
-    height: 50vw;
-  }
-
-  img {
-    @include mobile {
-      transform: scale(1.4);
-    }
-  }
+.social-links {
+  margin-top: 20px;
 }

@@ -1,24 +1,4 @@
-// header (the sticky one)
-
 #wrapper-header {
-  height: 77px;
-
-  // so that zoomin' in blog posts on /blog that are using transform
-  // are not overlaying the menu
-  z-index: 1;
-
-  background-color: $white;
-
-  @include mobile {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-
-    box-shadow: rgba(0, 0, 0, 0.025) 0px 4px 12px 0px;
-    height: 60px;
-  }
-
   >.container {
     display: flex;
     align-items: center;
@@ -30,14 +10,14 @@
 
 #site-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 
   width: 100%;
-  padding: 10px 0;
+  padding: 30px 0;
 
   @include mobile {
-    height: 60px;
+    flex-direction: column;
   }
 }
 
@@ -46,11 +26,11 @@
   color: $primary;
   cursor: pointer;
 
-  font-weight: 500;
-  font-size: $medium;
+  font-weight: 700;
+  font-size: $big;
   word-spacing: 0.05rem;
 
   @include mobile {
-    font-size: $small;
+    font-size: $medium;
   }
 }

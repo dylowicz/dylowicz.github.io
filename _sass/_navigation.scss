@@ -3,203 +3,34 @@
   margin-right: 0;
 
   @include mobile {
+    margin: auto;
+    
     font-size: $smallest;
   }
 }
 
-nav {
-  a {
-    margin-left: 30px;
-    text-align: right;
+#menu {
+  list-style-type: none;
 
-    color: $primary;
+  padding-left: 0;
+
+  li {
+    display: inline-block;
+
+    margin-left: 30px;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+  }
+
+  a {
+    text-align: center;
+
+    color: $secondary;
     font-weight: 400;
     font-size: $small;
 
     letter-spacing: -0.025rem;
-
-    @include mobile {
-      margin: 0 auto;
-    }
-  }
-}
-
-// hamburger menu
-
-#menu-toggle {
-  @include mobile {
-    display: block;
-
-    -webkit-user-select: none;
-    user-select: none;
-
-    margin-top: 5px;
-  }
-}
-
-#menu {
-  display: flex;
-  list-style-type: none;
-
-  @include mobile {
-    background: $white;
-    box-shadow: -1px 0px 12px 4px rgba(0, 0, 0, 0.05);
-
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    position: fixed;
-    width: 200px;
-    height: 100vh;
-    top: 0;
-    margin: auto;
-    padding: 0;
-
-    z-index: 2;
-
-    border-radius: 2px;
-
-    transform-origin: 0% 0%;
-    transform: translate(35%, 0%);
-
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-  }
-}
-
-#menu-toggle input:checked ~ ul
-{
-  @include mobile {
-    transform: translate(-65%, 0%);
-  }
-}
-
-#menu li {
-  display: flex;
-
-  @include mobile {
-    margin-top: 30px;
-    margin-right: 15px;
-  }
-}
-
-#menu li#home-link {
-  display: none;
-
-  @include mobile {
-    display: block;
-  }
-}
-
-#menu .social-links {
-  display: none;
-
-  @include mobile {
-    display: block;
-    margin-top: auto;
-    margin-bottom: 20vh;
-    margin-right: 15px;
-  }
-}
-
-#menu li:first-child {
-  @include mobile {
-    margin-top: 100px;
-  }
-}
-
-#menu-toggle input
-{
-  display: none;
-
-  @include mobile {
-    display: block;
-    width: 40px;
-    height: 32px;
-    position: absolute;
-    top: 12px;
-    right: 13px;
-
-    cursor: pointer;
-
-    opacity: 0; /* hide this */
-    z-index: 4; /* and place it over the hamburger */
-
-    -webkit-touch-callout: none;
-  }
-}
-
-#menu-toggle span
-{
-  display: none;
-  background: $white;
-
-  @include mobile {
-    display: block;
-    width: 33px;
-    height: 4px;
-    margin-bottom: 5px;
-    position: relative;
-
-    background: $primary;
-    border-radius: 1px;
-
-    z-index: 3;
-
-    transform-origin: 4px 0px;
-
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                opacity 0.55s ease;
-  }
-}
-
-#menu-toggle span:first-child
-{
-  @include mobile {
-    transform-origin: 0% 0%;
-  }
-}
-
-#menu-toggle span:nth-last-child(2)
-{
-  @include mobile {
-    transform-origin: 0% 100%;
-  }
-}
-
-/*
- * Transform all the slices of hamburger
- * into a crossmark.
- */
-#menu-toggle input:checked ~ span
-{
-  background: $primary;
-
-  @include mobile {
-    opacity: 1;
-    transform: rotate(45deg) translate(-2px, -1px);
-  }
-}
-
-/*
- * But let's hide the middle one.
- */
-#menu-toggle input:checked ~ span:nth-last-child(3)
-{
-  @include mobile {
-    opacity: 0;
-    transform: rotate(0deg) scale(0.2, 0.2);
-  }
-}
-
-/*
- * Oh yeah and the last one should go the other direction
- */
-#menu-toggle input:checked ~ span:nth-last-child(2)
-{
-  background: $primary;
-
-  @include mobile {
-    transform: rotate(-45deg) translate(0, -1px);
   }
 }

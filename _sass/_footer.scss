@@ -16,10 +16,6 @@
      color: $lightGrey;
    }
  }
-
- &.home {
-   padding: 0;
- }
 }
 
 #site-footer {
@@ -93,7 +89,7 @@
 
 #footer-credits {
  color: $lighterGrey;
- text-transform: lowercase;
+ // text-transform: lowercase;
  // padding-bottom: 50px;
 }
 

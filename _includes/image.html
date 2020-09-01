@@ -1,6 +1,6 @@
 <figure class="image">
   {% if include.href %}<a href="{{ include.href }}" alt="{{ include.alt | default: 'image'}}" {% unless include.follow %}rel="nofollow"{% endunless %}>{% endif %}
-  <img src="{{ include.src }}" alt="{{ include.alt | default: 'image' }}">
+  <img src="{{ include.src }}" alt="{{ include.alt | default: 'image' }}" class="{{ include.img_class }}">
   {% if include.href %}</a>{% endif %}
-  {% unless include.dont_show_alt %}<figcaption>{{ include.alt }}</figcaption>{% endunless %}
+  {% unless include.dont_show_caption %}<figcaption>{{ include.alt }}</figcaption>{% endunless %}
 </figure>
