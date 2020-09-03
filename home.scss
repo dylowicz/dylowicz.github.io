@@ -29,3 +29,19 @@
 .social-links {
   margin-top: 20px;
 }
+
+.posts {
+  margin-top: 80px;
+
+  @include mobile {
+    margin-top: 50px;
+  }
+}
+
+.avatar {
+  max-width: 400px;
+
+  @include mobile {
+    max-width: 260px;
+  }
+}

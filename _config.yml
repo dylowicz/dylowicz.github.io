@@ -3,7 +3,7 @@
 #
 
 # Name of your site (displayed in the header)
-name: dylowicz
+name: Dawid Dylowicz
 
 # Short bio or description (displayed in the header)
 description: ""
@@ -53,7 +53,7 @@ url: https://dawiddylowicz.com
 baseurl: ""
 
 # Link to blog posts
-permalink: blog/:title/
+permalink: /:title/
 
 # Jekyll 3 now only supports Kramdown for Markdown
 kramdown:

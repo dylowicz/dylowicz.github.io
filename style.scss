@@ -203,12 +203,12 @@ figcaption {
   margin-bottom: 15px;
 
   @include mobile {
-    font-size: $bigger;
+    // font-size: $bigger;
   }
 }
 
 #page-subtitle {
-  color: $primary;
+  color: $secondary;
   font-size: $small;
   text-align: center;
 
@@ -235,6 +235,69 @@ figcaption {
     background-attachment: scroll;
     background-position: 0 0;
   }
+}
+
+// blog
+
+// Posts preview on /blog
+
+.posts {
+  width: 100%;
+  padding-top: 30px;
+
+  @include mobile {
+    padding-top: 20px;
+  }
+}
+
+.post-preview {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+  z-index: 0;
+
+  padding: 15px;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.075);
+  border-radius: 2px;
+
+  transition: 0.2s all;
+
+  &:hover, &:active {
+    box-shadow: 3px 6px 16px rgba(0, 0, 0, 0.1);
+    transform: scale(1.005);
+    cursor: pointer;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include mobile {
+    padding: 10px;
+  }
+
+  a {
+    color: $primary;
+  }
+}
+
+.post-preview-title {
+  font-size: $medium;
+  font-weight: 700;
+  margin-top: 0px;
+  margin-bottom: 5px;
+
+  @include mobile {
+    font-size: $small;
+  }
+}
+
+.date {
+  font-size: $smallest;
+  color: $lighterGrey;
 }
 
 // custom implementations

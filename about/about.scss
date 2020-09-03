@@ -4,26 +4,11 @@
 @import "variables";
 
 #page-content {
-  text-align: center;
-
-  @include mobile {
-    >.container {
-      padding: 0;
-    }
-  }
-}
-
-.image {
-  @include mobile {
-    position: relative;
-    margin: auto;
-    overflow: hidden;
-    height: 50vw;
-  }
-
-  img {
-    @include mobile {
-      transform: scale(1.4);
-    }
+  >.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
   }
 }
