@@ -16,10 +16,6 @@
      color: $lightGrey;
    }
  }
-
- &.home {
-   padding: 0;
- }
 }
 
 #site-footer {
@@ -42,10 +38,9 @@
 
 .footer-container {
   display: flex;
-  // align-items: center;
+  align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  // text-align: left;
   height: 100%;
   margin: 5px;
 
@@ -93,7 +88,7 @@
 
 #footer-credits {
  color: $lighterGrey;
- text-transform: lowercase;
+ // text-transform: lowercase;
  // padding-bottom: 50px;
 }
 

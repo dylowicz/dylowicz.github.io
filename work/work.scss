@@ -9,6 +9,14 @@
   }
 }
 
+#work-links {
+  margin-bottom: 100px;
+  
+  @include mobile {
+    margin-bottom: 20px;
+  }
+}
+
 .boxes {
   display: flex;
   align-items: center;
@@ -25,6 +33,10 @@
 
 .box-container {
   text-align: center;
+
+  p {
+    color: $secondary;
+  }
 }
 
 a {

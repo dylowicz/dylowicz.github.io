@@ -7,12 +7,20 @@ description: "A page about myself."
 header: ""
 ---
 
-{% include image.html src="/assets/dylowicz.jpg" alt="Dawid's photo" dont_show_alt=true %}
-
-<div class="container">
-  <section id="home-buttons">
-    <a href="/about/" class="button button-secondary button-slanted"><span>About</span></a>
-    <a href="/work/" class="button button-secondary button-slanted"><span>Work</span></a>
-    <a href="/blog/" class="button button-secondary button-slanted"><span>Blog</span></a>
-  </section>
+<div id="hero-image">
+  {% include image.html src="/assets/dawid_avatar.jpg" alt="Dawid's photo" img_class="" dont_show_caption=true %}
 </div>
+
+{% if site.posts.size > 0 %}
+<div class="posts">
+  <h2 class="posts-section-title">Latest posts</h2>
+  {% for post in site.posts %}
+    <article class="post-preview">
+        <a href="{{ site.baseurl }}{{ post.url }}">
+          <h2 class="post-preview-title">{{ post.title }}</h2>
+        </a>
+        <span class="date">{{ post.date | date: "%b %e, %Y" }} &middot; {{ post.read_time }} min read</span>
+    </article>
+  {% endfor %}
+</div>
+{% endif %}

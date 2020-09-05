@@ -21,11 +21,11 @@ body {
 	background: $white;
   color: $primary;
 
-  // -webkit-font-smoothing: antialiased;
-  // -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
   -webkit-overflow-scrolling: touch;
-  // text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
 }
 
 .preload * {
@@ -176,12 +176,6 @@ figcaption {
 }
 
 #wrapper-content {
-  margin-top: 30px;
-
-  @include mobile {
-    margin-top: 60px;
-  }
-
   .container {
     max-width: 660px;
   }
@@ -214,7 +208,7 @@ figcaption {
 }
 
 #page-subtitle {
-  color: $primary;
+  color: $secondary;
   font-size: $small;
   text-align: center;
 
@@ -241,6 +235,69 @@ figcaption {
     background-attachment: scroll;
     background-position: 0 0;
   }
+}
+
+// blog
+
+// Posts preview on /blog
+
+.posts {
+  width: 100%;
+  padding-top: 30px;
+
+  @include mobile {
+    padding-top: 0;
+  }
+}
+
+.post-preview {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+  z-index: 0;
+
+  padding: 15px;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.075);
+  border-radius: 2px;
+
+  transition: 0.2s all;
+
+  &:hover, &:active {
+    box-shadow: 3px 6px 16px rgba(0, 0, 0, 0.1);
+    transform: scale(1.005);
+    cursor: pointer;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include mobile {
+    padding: 10px;
+  }
+
+  a {
+    color: $primary;
+  }
+}
+
+.post-preview-title {
+  font-size: $medium;
+  font-weight: 600;
+  margin-top: 0px;
+  margin-bottom: 5px;
+
+  @include mobile {
+    font-size: $small;
+  }
+}
+
+.date {
+  font-size: $smallest;
+  color: $lighterGrey;
 }
 
 // custom implementations
@@ -363,8 +420,13 @@ figcaption {
   }
 
   &-big {
-    height: 128px;
     width: 128px;
+    height: 128px;
+  }
+
+  &-massive {
+    width: 256px;
+    height: 256px;
   }
 }
 
@@ -431,11 +493,11 @@ figcaption {
 }
 
 .avatar {
-  border: 2px solid $ternary;
+  border: 2px solid $secondary;
   border-radius: 50%;
   overflow: hidden;
 
-  >img {
+  img {
     background-size: cover;
     background-position: center;
     transform: scale(1.1);
@@ -450,5 +512,10 @@ figcaption {
   &-big {
     width: 132px;
     height: 132px;
+  }
+
+  &-massive {
+    width: 260px;
+    height: 260px;
   }
 }
