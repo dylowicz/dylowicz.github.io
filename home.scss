@@ -35,22 +35,13 @@
 }
 
 .posts {
-  margin-top: 80px;
-
-  @include mobile {
-    margin-top: 50px;
-  }
+  margin-top: 50px;
 }
 
 .posts-section-title {
   font-size: $bigger;
   text-align: center;
-  margin-bottom: 40px;
-
-  @include mobile {
-    font-size: $big;
-    margin-bottom: 30px;
-  }
+  margin-bottom: 30px;
 }
 
 .social-links {
