@@ -11,18 +11,16 @@ header: ""
   {% include image.html src="/assets/dawid_avatar.jpg" alt="Dawid's photo" img_class="" dont_show_caption=true %}
 </div>
 
+{% if site.posts.size > 0 %}
 <div class="posts">
   <h2 class="posts-section-title">Latest posts</h2>
   {% for post in site.posts %}
-    <article class="post-preview" onclick="location.href='{{ site.baseurl }}{{ post.url }}';">
-      <section>
+    <article class="post-preview">
         <a href="{{ site.baseurl }}{{ post.url }}">
           <h2 class="post-preview-title">{{ post.title }}</h2>
         </a>
         <span class="date">{{ post.date | date: "%b %e, %Y" }} &middot; {{ post.read_time }} min read</span>
-      </section>
-
-      <a href="{{ site.baseurl }}{{ post.url }}">→</a>
     </article>
   {% endfor %}
 </div>
+{% endif %}
