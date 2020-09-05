@@ -16,7 +16,9 @@ sitemap: false
   {% for post in site.posts %}
     <article class="post-preview" onclick="location.href='{{ site.baseurl }}{{ post.url }}';">
       <section>
-        <h1 class="post-preview-title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+        <a href="{{ site.baseurl }}{{ post.url }}">
+          <h2 class="post-preview-title">{{ post.title }}</h2>
+        </a>
         <span class="date">{{ post.date | date: "%b %e, %Y" }} &middot; {{ post.read_time }} min read</span>
       </section>
 
