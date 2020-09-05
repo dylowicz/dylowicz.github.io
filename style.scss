@@ -21,11 +21,11 @@ body {
 	background: $white;
   color: $primary;
 
-  // -webkit-font-smoothing: antialiased;
-  // -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
   -webkit-overflow-scrolling: touch;
-  // text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
 }
 
 .preload * {
@@ -203,7 +203,7 @@ figcaption {
   margin-bottom: 15px;
 
   @include mobile {
-    // font-size: $bigger;
+    font-size: $bigger;
   }
 }
 
@@ -246,7 +246,7 @@ figcaption {
   padding-top: 30px;
 
   @include mobile {
-    padding-top: 20px;
+    padding-top: 0;
   }
 }
 
@@ -286,7 +286,7 @@ figcaption {
 
 .post-preview-title {
   font-size: $medium;
-  font-weight: 700;
+  font-weight: 600;
   margin-top: 0px;
   margin-bottom: 5px;
 
