@@ -29,6 +29,12 @@
 #hero-image {
   max-width: 400px;
 
+  >figure {
+    >img {
+      border-radius: 9px;
+    }
+  }
+
   @include mobile {
     max-width: 260px;
   }
