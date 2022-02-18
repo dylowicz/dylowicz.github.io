@@ -261,7 +261,7 @@ figcaption {
 
   padding: 15px;
   box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.075);
-  border-radius: 2px;
+  border-radius: 9px;
 
   transition: 0.2s all;
 
@@ -308,7 +308,7 @@ figcaption {
   line-height: 45px;
   padding: 0 15px;
   border: 2px solid;
-  border-radius: 2px;
+  border-radius: 3px;
 
   font-size: $smaller;
   font-weight: 500;
@@ -443,7 +443,7 @@ figcaption {
   margin: 10px;
   width: 280px;
 
-  border-radius: 3px;
+  border-radius: 9px;
   box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.12);
   &:hover, &:active {
     box-shadow: 3px 6px 24px rgba(0, 0, 0, 0.12);
